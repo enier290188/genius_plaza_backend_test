@@ -1,0 +1,51 @@
+{% spaceless %}
+    <!DOCTYPE html>
+    <html lang="en" xmlns="http://www.w3.org/1999/html">
+        <head>
+            <meta charset="UTF-8">
+            <title>Genius Plaza Backend Test</title>
+            <style>
+                header, main > #crud, main > #api {
+                    border-bottom: 1px solid #000000;
+                    text-align: center;
+                }
+
+                main > #user {
+                    text-align: center;
+                }
+
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>Genius Plaza Backend Test</h1>
+            </header>
+            <main>
+                <div id="crud">
+                    <p><strong><a target="_blank" href="{% url "admin:index" %}">Django Administration CRUD</a></strong></p>
+                    <p><strong><a target="_blank" href="/genius-plaza/users/">Django REST framework Users CRUD</a></strong></p>
+                    <p><strong><a target="_blank" href="/genius-plaza/recipes/">Django REST framework Recipes CRUD</a></strong></p>
+                    <p><strong><a target="_blank" href="/genius-plaza/steps/">Django REST framework Steps CRUD</a></strong></p>
+                    <p><strong><a target="_blank" href="/genius-plaza/ingredients/">Django REST framework Ingredients CRUD</a></strong></p>
+                </div>
+                <div id="api">
+                    <h3>API</h3>
+                    <pre><strong>   GET:</strong>     /genius-plaza/recipe/                 # get all the recipes</pre>
+                    <pre><strong>  POST:</strong>     /genius-plaza/recipe/add/             # create a new recipe</pre>
+                    <pre><strong>   GET:</strong>     /genius-plaza/recipe/(pk)/detail/     # get recipe by pk   </pre>
+                    <pre><strong>   PUT:</strong>     /genius-plaza/recipe/(pk)/change/     # change recipe by pk</pre>
+                    <pre><strong>DELETE:</strong>     /genius-plaza/recipe/(pk)/delete/     # delete recipe by pk</pre>
+                    <br>
+                    <pre><strong>   GET:</strong>     /genius-plaza/recipe-by-user/(pk)/    # get recipe by pk:user </pre>
+                </div>
+                <div id="user">
+                    <h2>Enier Ramos García</h2>
+                    <p><strong>Address:</strong> Newport News, VA, 23601</p>
+                    <p><strong>Mobile:</strong> (757) 230 0031</p>
+                    <p><strong>E-mail:</strong> enier290188@gmail.com</p>
+                    <p><strong>Age:</strong> 31</p>
+                </div>
+            </main>
+        </body>
+    </html>
+{% endspaceless %}

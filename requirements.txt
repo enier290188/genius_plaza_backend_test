@@ -1,0 +1,4 @@
+django==1.11.21
+djangorestframework==3.9.4
+passlib==1.7.1
+pytz==2019.1
