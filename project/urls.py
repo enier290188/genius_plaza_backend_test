@@ -20,6 +20,6 @@ from . import views
 urlpatterns = [
     url(regex=r'^$', view=views.index, name='index'),
     url(r'^home/', include('home.urls', namespace='home')),
-    url(r'^genius-plaza/', include('genius_plaza.urls', namespace='genius_plaza')),
+    url(r'^genius-plaza/', include('genius_plaza.urls', namespace='genius-plaza')),
     url(r'^django-administration/', include(admin.site.urls)),
 ]
