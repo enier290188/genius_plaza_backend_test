@@ -36,7 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
         super().__init__(*args, **kwargs)
 
     def validate_username(self, username):
-        if re.match('^[\\w_]+$', username):
+        if re.match('^[a-z0-9_]+$', username):
             return username
         else:
             raise serializers.ValidationError(

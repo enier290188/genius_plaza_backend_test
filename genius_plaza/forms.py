@@ -41,7 +41,7 @@ FIELD_USERNAME = forms.CharField(
     min_length=1,
     max_length=100,
     validators=[
-        validators.RegexValidator('^[\\w_]+$', message='Letters, digits and _ only.'),
+        validators.RegexValidator('^[a-z0-9_]+$', message='Letters, digits and _ only.'),
     ],
     widget=forms.TextInput(
         attrs={
@@ -80,7 +80,8 @@ FIELD_PASSWORD_CONFIRMATION = forms.CharField(
 
 class FieldPasswordHashReadOnlyWidget(forms.Widget):
     def render(self, name, value, attrs=None, renderer=None):
-        result = value.split('$')
+        print('************', name)
+        result = str(value).split('$')
         if len(result) != 4:
             return 'Invalid password format or unknown hashing algorithm.'
         else:

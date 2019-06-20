@@ -10,10 +10,11 @@ router.register(r'ingredients', views.IngredientViewSet, 'ingredients')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(regex=r'^recipe/$', view=views.RecipeList.as_view(), name='recipe'),
-    url(regex=r'^recipe/add/$', view=views.RecipeCreate.as_view(), name='recipe-add'),
-    url(regex=r'^recipe/(?P<pk>\d+)/detail/$', view=views.RecipeDetail.as_view(), name='recipe-detail'),
-    url(regex=r'^recipe/(?P<pk>\d+)/change/$', view=views.RecipeChange.as_view(), name='recipe-change'),
-    url(regex=r'^recipe/(?P<pk>\d+)/delete/$', view=views.RecipeDelete.as_view(), name='recipe-delete'),
-    url(regex=r'^recipe-by-user/(?P<pk>\d+)/$', view=views.recipe_by_user, name='recipe-by-user'),
+    url(regex=r'^recipe/$', view=views.RecipeListView.as_view(), name='recipe-list'),
+    url(regex=r'^recipe/create/$', view=views.RecipeCreateView.as_view(), name='recipe-create'),
+    url(regex=r'^recipe/(?P<pk>\d+)/$', view=views.RecipeDetailView.as_view(), name='recipe-detail'),
+    url(regex=r'^recipe/(?P<pk>\d+)/update/$', view=views.RecipeUpdateView.as_view(), name='recipe-update'),
+    url(regex=r'^recipe/(?P<pk>\d+)/delete/$', view=views.RecipeDeleteView.as_view(), name='recipe-delete'),
+    url(regex=r'^recipe-by-user-pk/(?P<pk>\d+)/$', view=views.RecipeByUserPKView.as_view(), name='recipe-by-user-pk'),
+    url(regex=r'^recipe-by-user-username/(?P<username>[a-z0-9_]+)/$', view=views.RecipeByUserUsernameView.as_view(), name='recipe-by-user-username'),
 ]
