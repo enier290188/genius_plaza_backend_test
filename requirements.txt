@@ -1,4 +1,4 @@
-django==1.11.21
+django==1.11.29
 djangorestframework==3.9.4
 passlib==1.7.1
 pytz==2019.1
